@@ -40,7 +40,7 @@ jobs:
           gcloud --quiet auth configure-docker
       
       - run: |-
-          gcloud config set project $PROJECT_ID
+          gcloud config set project yhnoh-335705
           
       # Build the Docker image
       - name: Build
