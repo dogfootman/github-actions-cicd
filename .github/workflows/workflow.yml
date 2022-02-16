@@ -38,6 +38,10 @@ jobs:
       # helper for authentication
       - run: |-
           gcloud --quiet auth configure-docker
+      
+      - run: |-
+          gcloud config set project $PROJECT_ID
+          
       # Build the Docker image
       - name: Build
         run: |-
