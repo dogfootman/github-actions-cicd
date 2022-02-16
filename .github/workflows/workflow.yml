@@ -1,4 +1,4 @@
-name: Build and Deploy to Google Compute Engine
+name: GCE Build and Deploy
 
 on:
   push:
