@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  PROJECT_ID: yhnoh-335705
+  PROJECT_ID: $YHNOH_GCE_PROJECT
   GCE_INSTANCE: noman-githubactions-vm # TODO: update to instance name
   GCE_INSTANCE_ZONE: asia-southeast1-a
 
@@ -22,9 +22,9 @@ jobs:
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '0.0.1'
+          version: '270.0.0'
           service_account_key: $
-          project_id: $
+          project_id: $YHNOH_GCE_PROJECT
 
       # Configure Docker to use the gcloud command-line tool as a credential
       # helper for authentication
@@ -42,4 +42,4 @@ jobs:
         run: |-
           gcloud compute instances update-container "$GCE_INSTANCE" \
             --zone "$GCE_INSTANCE_ZONE" \
-            --container-image "gcr.io/$PROJE
+            --container-image "gcr.io/noman-githubactions 
